@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Interactif</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        
+    <!-- Boutons interactifs -->
+    <div class="buttons">
+        <button onclick="showContactForm()">Formulaire de Contact</button>
+        <button onclick="showPresentationVideo()">Vidéo de Présentation</button>
+        <button onclick="showPhotos()">Photos</button>
+        <button onclick="showCV()">CV</button>
+    </div>
+
+    <!-- Formulaire de contact (popup) -->
+    <div id="contactForm" class="popup">
+        <h2>Formulaire de Contact</h2>
+        <form>
+            <label for="name">Nom:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <input type="submit" value="Envoyer">
+        </form>
+        <button onclick="hideContactForm()">Fermer</button>
+    </div>
+
+    <!-- Vidéo de présentation -->
+    <div id="presentationVideo" class="hidden">
+        <video controls>
+            <source src="COSTA RICA IN 4K 60fps HDR (ULTRA HD).mp4" type="video/mp4  " style="height: 500px; width: 690px;">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Photos -->
+    <div id="photos" class="hidden" >
+        <h2>Photos</h2>
+        <img src="ADAM.jpg" alt="Vous et votre binôme" style="height: 500px; width: 690px;">
+    </div>
+
+    <!-- CV -->
+    <div id="cv" class="hidden" style="border: 1px solid black;">
+        <h1>Adam Chhaiba</h1> <h1>Mohamed Zoulaine</h1>
+       <h2>Profil</h2>
+Vendeur accueillant et souriant, capable de gérer plusieurs tâches  <br>à la fois et de travailler en équipe. Flexible sur les horaires et <br> prêt à travailler le week-end. À la recherche d'un nouveau poste <br> au sein d'une équipe dynamique offrant des opportunités d'évolution. <br>
+
+<h3>Formation</h3>
+	Institut Berrada , Casablanca<br>
+•	Baccalauréat. Science Physique  <br>
+	Collège Teccart , Montrèal <br>
+•	DEC. Technique de l’informatique (En cours) <br><br>
+
+<h3>Expèrience</h3>
+Super marché, Casablanca 08/2022 <br>
+•	Gestion de la caisse et des remboursements<br>
+•	Répondre aux appels des clients<br>
+•	Ouverture et fermeture du magasin <br>
+•	Bon traitement et respect des clients<br><br>
+
+<h3>Compétences</h3>
+	Accueil au client<br>
+	Sens de responsabilités <br>
+	Capacité d’adaptation<br>
+	Compétence avancées en matière de communication écrite et verbale<br>
+	Polyvalent<br><br>
+
+
+
+<h3>Langues</h3>
+Anglais : Niveau intermédiaire<br>
+Français : Niveau intermédiaire<br><br>
+
+<h3>Contact   ADAM</h3>
+• 2269 RUE DEZERY App 2 <br>
+• H1W 2S4 ,QC ,MONTREAL <br>
+• 5149071760<br>
+• Adamchhaiba1999@gmail.com<br>
+<h3>Contact mohamed zoulaine</h3>
+•1835 RUE SAINT JUST<br>
+• H1W 2S4 ,QC ,MONTREAL <br>
+• 5149071760<br>
+• Adamchhaiba1999@gmail.com<br>
+
+
+        <!-- Insérez ici votre CV -->
+    </div>
+
+    <script>
+        // Fonctions pour afficher/masquer les différentes sections
+        function showContactForm() {
+            document.getElementById("contactForm").style.display = "block";
+        }
+
+        function hideContactForm() {
+            document.getElementById("contactForm").style.display = "none";
+        }
+
+        function showPresentationVideo() {
+            document.getElementById("presentationVideo").classList.remove("hidden");
+        }
+
+        function showPhotos() {
+            document.getElementById("photos").classList.remove("hidden");
+        }
+
+        function showCV() {
+            document.getElementById("cv").classList.remove("hidden");
+        }
+    </script>
+
+<style>
+    .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
+
+.buttons button:focus {
+    outline: none;
+}
+
+</style>
+
+Analyse du Code HTML, CSS et JavaScript pour le Portfolio Interactif
+
+Introduction :
+Le code suivant représente un portfolio interactif permettant à l'utilisateur d'accéder à différentes sections telles que le formulaire de contact, une vidéo de présentation, des photos et un CV. Chaque section est affichée ou masquée en fonction de l'action de l'utilisateur.
+
+1. Structure HTML :
+
+Le document HTML commence par la déclaration de type <!DOCTYPE html>.
+Il est défini en anglais (lang="en").
+Dans la section <head>, on retrouve les métadonnées, le titre de la page et un lien vers un fichier de style externe (styles.css).
+Le corps de la page (<body>) contient :
+Une série de boutons dans un conteneur <div class="buttons">, chacun associé à une fonction JavaScript pour afficher une section spécifique.
+Quatre sections :
+Un formulaire de contact dans une boîte de dialogue (<div id="contactForm" class="popup">).
+Une vidéo de présentation (<div id="presentationVideo" class="hidden">).
+Des photos (<div id="photos" class="hidden">).
+Un CV (<div id="cv" class="hidden">).
+2. Fonctions JavaScript :
+
+Des fonctions JavaScript sont définies pour afficher ou masquer les différentes sections en réponse aux actions de l'utilisateur.
+showContactForm(), hideContactForm(), showPresentationVideo(), showPhotos(), showCV().
+Chaque fonction agit sur les propriétés CSS des éléments pour modifier leur visibilité.
+3. Styles CSS :
+
+Le CSS est inclus dans la balise <style> et contient les règles de style pour les éléments HTML.
+Il définit le style des boîtes de dialogue, des boutons, et des sections cachées.
+Les boutons ont un style spécifique avec une couleur de fond, une couleur de texte, une bordure, etc.
+Conclusion :
+Ce code représente un portfolio interactif qui offre une expérience utilisateur dynamique. L'utilisateur peut naviguer entre différentes sections en cliquant sur des boutons, ce qui rend la découverte du contenu plus intuitive. Les boîtes de dialogue et la visibilité conditionnelle des sections ajoutent un aspect interactif au portfolio, améliorant ainsi l'engagement de l'utilisateur.
+</body>
+</html>
