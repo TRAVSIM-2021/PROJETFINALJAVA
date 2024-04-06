@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jeu de devinette de nombre</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<h1>Jeu de devinette de nombre</h1>
+	<p>Nous avons généré un nombre aléatoire entre 1 et 100. Pouvez-vous le deviner ?</p>
+	<input type="text" id="guessInput" placeholder="Entrez votre proposition ici">
+	<button onclick="checkGuess()">Vérifier la proposition</button>
+	<p id="feedback"></p>
+	<script src="script.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+	text-align: center;
+	padding: 50px;
+}
+
+button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+#feedback {
+	margin-top: 30px;
+	font-weight: bold;
+	color: #4CAF50;
+}
+
+    </style>
+
+<script>
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+let guessInput = document.getElementById('guessInput');
+let feedback = document.getElementById('feedback');
+
+function checkGuess() {
+	let userGuess = Number(guessInput.value);
+	if (userGuess === randomNumber) {
+		feedback.textContent = 'Félicitations ! Vous avez deviné le nombre.';
+	} else if (userGuess < randomNumber) {
+		feedback.textContent = 'Essayez à nouveau. Votre proposition est trop basse.';
+	} else if (userGuess > randomNumber) {
+		feedback.textContent = 'Essayez à nouveau. Votre proposition est trop élevée.';
+	}
+	guessInput.value = '';
+}
+</script>
+<div>
+//Analyse du Code HTML, CSS et JavaScript pour le Jeu de Devinette de Nombre
+
+Introduction :
+Le code suivant constitue un jeu interactif de devinette de nombre, où l'utilisateur doit deviner un nombre généré aléatoirement entre 1 et 100. Le jeu fournit des indices pour aider l'utilisateur à deviner correctement le nombre.
+
+1. Structure HTML :
+
+Le document HTML commence par la déclaration de type <!DOCTYPE html>.
+Il comporte une balise <html> qui englobe tout le contenu.
+La section <head> contient le titre de la page et une référence à un fichier de style externe (styles.css).
+Dans la section <body>, on trouve :
+Un titre <h1> pour le jeu.
+Une brève description du jeu <p>.
+Un champ de saisie <input> où l'utilisateur peut entrer sa proposition.
+Un bouton <button> qui déclenche la vérification de la proposition.
+Une zone <p> pour afficher les rétroactions (s'il a deviné correctement ou non).
+2. Styles CSS :
+
+Le CSS intégré dans la balise <style> au sein du document définie quelques règles de style pour le corps de la page, les boutons et les rétroactions.
+Il utilise la police Arial ou une police sans-serif par défaut.
+Les boutons ont un style spécifique : couleur de fond verte, texte blanc, bord arrondi, etc.
+Les rétroactions ont une couleur spécifique (#4CAF50) et une mise en forme en gras.
+3. Script JavaScript :
+
+Le JavaScript est inclus dans une balise <script> à la fin du corps de la page.
+Il commence par déclarer une variable randomNumber qui stocke un nombre aléatoire entre 1 et 100.
+Les éléments DOM guessInput et feedback sont sélectionnés pour récupérer l'entrée de l'utilisateur et afficher les rétroactions, respectivement.
+La fonction checkGuess() est définie pour vérifier la proposition de l'utilisateur :
+Elle récupère la valeur saisie par l'utilisateur et la convertit en nombre.
+Elle compare cette valeur avec le nombre généré aléatoirement.
+Elle affiche une rétroaction appropriée selon que la proposition est correcte, trop basse ou trop élevée.
+Elle réinitialise le champ de saisie après chaque proposition.
+Conclusion :
+Ce jeu de devinette de nombre est une application simple mais interactive qui illustre l'utilisation du HTML, du CSS et du JavaScript pour créer une expérience utilisateur engageante. Il permet aux utilisateurs de tester leur capacité à deviner un nombre et fournit des rétroactions en temps réel pour les guider vers la bonne réponse.
+
+</body>
+</html>
+
+
